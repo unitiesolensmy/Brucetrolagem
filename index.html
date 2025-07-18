@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Boobiegoods Player</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      color: white;
+      font-family: sans-serif;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body onclick="pegar()">
+  🙂  
+  <audio id="pegaAudio" preload="auto">
+    <source src="https://files.catbox.moe/54v1im.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function pegar() {
+      // Altera o conteúdo da tela
+      document.body.innerHTML = "<div style='color: red; font-size: 48px;'>HAHAHAHA TE PEGUEI!</div>";
+
+      // Reproduz o áudio
+      const audio = document.getElementById("pegaAudio");
+      audio.play().catch(e => {
+        // Fallback caso algo impeça o autoplay
+        alert("Clique novamente para tocar o som!");
+      });
+    }
+  </script>
+</body>
+</html>
